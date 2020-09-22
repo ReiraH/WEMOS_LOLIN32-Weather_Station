@@ -1,2 +1,2 @@
 # WEMOS_LOLIN32-Weather_Station
- A small weather Station project for the minor Smart Things.
+ A small Weather Station project for the minor Smart Things.

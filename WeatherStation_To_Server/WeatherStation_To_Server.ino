@@ -4,7 +4,7 @@
   Last edit on September 29, 2020.
 */
 
-#include <SmartThings.h>
+#include "SmartThings.h"
 #include "DHT.h"
  
 #define DHTPIN 5
@@ -41,9 +41,9 @@ void setup() {
 
   // TODO
   // connect to wifi, provide ssid name and password.
-  wifi.connect("roomrouter", "shingudailo3072");
+  wifi.connect("ssid", "password");
   // login. If you need to register, set registerStudent to true.
-  studentId = api.login("156", "Biotherm242", false);
+  studentId = api.login("YourStudentNumber", "YourPassword", false);
   // studentId = api.login("YourStudentNumber", "YourPassword", true);
   /* TODO
     create a weatherstation (ONLY IF YOU DIDN'T CREATE ONE YET!)
@@ -77,7 +77,7 @@ void loop() {
   // Read temperature as Celsius (the default)
   float temperature = dht.readTemperature();
   // Check if any reads failed and exit early (to try again).
-  if (isnan(h) || isnan(t)) {
+  if (isnan(humidity) || isnan(temperature)) {
   Serial.println("Failed to read from DHT sensor!");
   return;
   }
